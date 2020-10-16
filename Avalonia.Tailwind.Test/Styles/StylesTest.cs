@@ -31,6 +31,7 @@ namespace Avalonia.Tailwind.Test
       InlineData(typeof(StackPanel)),
       InlineData(typeof(Rectangle)),
       InlineData(typeof(TextBlock)),
+      InlineData(typeof(UserControl)),
     ]
     public void StylesTest_CreateStyles(Type type)
     {

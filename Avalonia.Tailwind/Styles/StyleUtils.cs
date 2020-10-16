@@ -31,7 +31,7 @@ namespace Avalonia.Tailwind
           CreateStyle(controlType, property, d.thickness, getClassName("m", d.type.GetName(), d.name))),
 
         "Padding" => definitions.ThicknessLarge.Select(d =>
-          CreateStyle(controlType, property, d.thickness, getClassName("m", d.type.GetName(), d.name))),
+          CreateStyle(controlType, property, d.thickness, getClassName("p", d.type.GetName(), d.name))),
 
         "Margin" => definitions.ThicknessLarge.Select(d =>
           CreateStyle(controlType, property, d.thickness, getClassName("m", d.type.GetName(), d.name))),
