@@ -1,0 +1,49 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Examples.Views.Buttons">
+
+  <Border Classes="p_4 rounded_lg bg_gray_100">
+    <StackPanel Classes="s_4">
+
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Default" />
+        <Button Content="Default" />
+      </StackPanel>
+
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Outline" />
+        <Button Classes="text_xl font_demibold text_blue_700 border_blue_700 border_2 bg_gray_100" Content="Button"  />
+      </StackPanel>
+
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Call to Action" />
+        <Border Classes="rounded_lg">
+          <Button Classes="text_xl font_demibold bg_indigo_600 p_4 border_0 text_gray_100" Content="Get Started"/>
+        </Border>
+      </StackPanel>
+
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Secondary Action" />
+        <Button Classes="text_xl font_demibold bg_indigo_100 p_4 border_0 text_indigo_700" Content="Live Demo" />
+      </StackPanel>
+
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Free" />
+        <Button Classes="text_xl text_gray_600 font_demibold bg_gray_100 border_0" Content="Cancel" />
+      </StackPanel>
+
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Win10" />
+        <Button Classes="text_xl bg_gray_400 border_0 p_3" Content="Rename this PC"/>
+      </StackPanel>
+
+      <Border Classes="w_7 bg_blue_400 h_7 rounded_lg p_1" ClipToBounds="True" MaxWidth="400">
+        <Button Content="Border Test"/>
+      </Border>
+
+    </StackPanel>
+  </Border>
+</UserControl>
