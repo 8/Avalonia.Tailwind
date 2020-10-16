@@ -48,8 +48,9 @@ namespace Avalonia.Tailwind.Test.Styles
     {
       var nan = double.NaN;
 
-      (nan == double.NaN).Should().BeTrue();
+      (nan == double.NaN).Should().BeFalse();
 
+      double.IsNaN(nan).Should().BeTrue();
     }
   }
 }

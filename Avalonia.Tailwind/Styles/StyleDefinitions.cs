@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 
 using Avalonia.Media;
@@ -16,6 +17,7 @@ namespace Avalonia.Tailwind.Styles
     ImmutableArray<(string name, double value)> Spacing { get; }
     ImmutableArray<(string name, double value)> Width { get; }
     ImmutableArray<(string name, double value)> Height { get; }
+    ImmutableDictionary<Type, ImmutableArray<string>> PseudoClasses { get; }
   }
 
   public class StyleDefinitions : IStyleDefinitions
@@ -29,6 +31,7 @@ namespace Avalonia.Tailwind.Styles
     public ImmutableArray<(string name, double value)> Spacing { get; }
     public ImmutableArray<(string name, double value)> Width { get; }
     public ImmutableArray<(string name, double value)> Height { get; }
+    public ImmutableDictionary<Type, ImmutableArray<string>> PseudoClasses { get; }
 
     public StyleDefinitions(
       IEnumerable<(string name, ThicknessType type, Thickness thickness)> borderThickness,
@@ -39,7 +42,8 @@ namespace Avalonia.Tailwind.Styles
       IEnumerable<(string name, FontWeight weight)> fontWeight,
       IEnumerable<(string name, double vlaue)> spacing,
       IEnumerable<(string name, double vlaue)> width,
-      IEnumerable<(string name, double vlaue)> height
+      IEnumerable<(string name, double vlaue)> height,
+      IDictionary<Type, ImmutableArray<string>> pseudoClasses
     )
     {
       this.BorderThickness = borderThickness.ToImmutableArray();
@@ -51,6 +55,7 @@ namespace Avalonia.Tailwind.Styles
       this.Spacing = spacing.ToImmutableArray();
       this.Width = width.ToImmutableArray();
       this.Height = height.ToImmutableArray();
+      this.PseudoClasses = pseudoClasses.ToImmutableDictionary();
     }
   }
 }

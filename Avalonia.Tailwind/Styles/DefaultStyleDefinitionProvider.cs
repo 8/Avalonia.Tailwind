@@ -1,4 +1,5 @@
 ﻿using Avalonia.Tailwind.Colors;
+using Avalonia.Tailwind.Controls;
 
 namespace Avalonia.Tailwind.Styles
 {
@@ -17,7 +18,8 @@ namespace Avalonia.Tailwind.Styles
         width: Values.Create(Scales.LargeScaleDouble),
         height: Values.Create(Scales.LargeScaleDouble),
         cornerRadius: CornerRadiusDefinitions.CreateCornerRadiusDefinitions(Scales.SmallScaleDouble),
-        fontWeight: FontWeightDefinitions.Create()
+        fontWeight: FontWeightDefinitions.Create(),
+        pseudoClasses: PseudoClassHelper.GetPseudoClassesPerType()
       );
     }
   }
