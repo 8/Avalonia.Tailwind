@@ -51,13 +51,13 @@ namespace Avalonia.Tailwind
         "FontSize" => definitions.FontSize.Select(d =>
           CreateStyle(controlType, property, d.value, getClassName($"text", d.name))),
 
-        "Spacing" => definitions.Value.Select(d =>
+        "Spacing" => definitions.Spacing.Select(d =>
           CreateStyle(controlType, property, d.value, getClassName($"s", d.name))),
 
-        "Width" => definitions.Value.Select(d =>
+        "Width" => definitions.Width.Select(d =>
           CreateStyle(controlType, property, d.value, getClassName($"w", d.name))),
 
-        "Height" => definitions.Value.Select(d =>
+        "Height" => definitions.Height.Select(d =>
           CreateStyle(controlType, property, d.value, getClassName($"h", d.name))),
 
         "CornerRadius" => definitions.CornerRadius.Select(d =>

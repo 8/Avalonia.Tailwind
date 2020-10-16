@@ -12,8 +12,10 @@ namespace Avalonia.Tailwind.Styles
         thicknessSmall: ThicknessDefinitions.Create(Scales.SmallScaleInt, ThicknessDefinitions.GetThicknessTypes()),
         thicknessLarge: ThicknessDefinitions.Create(Scales.LargeScaleInt, ThicknessDefinitions.GetThicknessTypes()),
         brush: BrushDefinitions.Create(new DefaultColorPaletteDefinitionProvider().ColorDefinitions),
-        size: StyleDefinitionHelpers.CreateSizeDefinitions(Sizes.SizeValues),
-        value: StyleDefinitionHelpers.CreateValueDefinitions(Scales.LargeScaleDouble),
+        fontSize: FontSizes.Create(FontSizes.CreateValues()),
+        spacing: Values.Create(Scales.LargeScaleDouble),
+        width: Values.Create(Scales.LargeScaleDouble),
+        height: Values.Create(Scales.LargeScaleDouble),
         cornerRadius: CornerRadiusDefinitions.CreateCornerRadiusDefinitions(Scales.SmallScaleDouble)
       );
     }
