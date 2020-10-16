@@ -2,24 +2,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="clr-namespace:Examples.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Examples.MainWindow"
         Title="Examples"
         MinWidth="800" MinHeight="600"
-        Classes="bg_gray_400 m_4">
+        >
   <Grid>
-    <Border Classes="rounded_md bg_gray_100">
-      <StackPanel Classes="m_4 s_4" Orientation="Horizontal">
-        <Border Classes="w_6 h_6 rounded_xl bg_gray_400" >
-          <Image Source="/profile.png" />
-        </Border>
-        <StackPanel>
-          <TextBlock Classes="text_lg" Text="Erin Lindford" />
-          <TextBlock Classes="purple_500" Text="Product Engineer" />
-          <TextBlock Classes="gray_600" Text="erinlindford@example.com" />
-          <TextBlock Classes="gray_600" Text="(555) 765-4321" />
-        </StackPanel>
-      </StackPanel>
-    </Border>
+    <TabControl>
+      <TabItem Header="User Card">
+        <Grid Classes="bg_gray_400" ColumnDefinitions="Auto" RowDefinitions="Auto" >
+          <v:UserCard />
+        </Grid>
+      </TabItem>
+    </TabControl>
   </Grid>
 </Window>
