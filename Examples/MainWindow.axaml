@@ -15,6 +15,13 @@
           <v:UserCard />
         </Grid>
       </TabItem>
+      <TabItem Header="Info Form">
+        <Grid Classes="bg_gray_400" ColumnDefinitions="Auto" RowDefinitions="Auto">
+          <Border Classes="p_4 align_h_center" >
+            <v:InfoForm />
+          </Border>
+        </Grid>
+      </TabItem>
     </TabControl>
   </Grid>
 </Window>

@@ -71,7 +71,10 @@ namespace Avalonia.Tailwind
         "VerticalAlignment" => EnumEx.GetValues<VerticalAlignment>().Select(alignment =>
           CreateStyle(controlType, property, alignment, getClassName("align", "v", alignment.ToString()))),
 
-        _ => new Style[0],
+        "FontWeight" => definitions.FontWeight.Select(d =>
+          CreateStyle(controlType, property, d.weight, getClassName("font", d.name))),
+
+       _ => new Style[0],
       };
     }
 

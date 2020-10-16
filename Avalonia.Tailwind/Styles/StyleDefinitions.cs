@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 
-using Avalonia;
 using Avalonia.Media;
 
 namespace Avalonia.Tailwind.Styles
@@ -13,6 +12,7 @@ namespace Avalonia.Tailwind.Styles
     ImmutableArray<(string name, int value, Brush brush)> Brush { get; }
     ImmutableArray<(string name, double value)> FontSize { get; }
     ImmutableArray<(string name, CornerRadius cornerRadius)> CornerRadius { get; }
+    ImmutableArray<(string name, FontWeight weight)> FontWeight { get; }
     ImmutableArray<(string name, double value)> Spacing { get; }
     ImmutableArray<(string name, double value)> Width { get; }
     ImmutableArray<(string name, double value)> Height { get; }
@@ -25,6 +25,7 @@ namespace Avalonia.Tailwind.Styles
     public ImmutableArray<(string name, int value, Brush brush)> Brush { get; }
     public ImmutableArray<(string name, double value)> FontSize { get; }
     public ImmutableArray<(string name, CornerRadius cornerRadius)> CornerRadius { get; }
+    public ImmutableArray<(string name, FontWeight weight)> FontWeight { get; }
     public ImmutableArray<(string name, double value)> Spacing { get; }
     public ImmutableArray<(string name, double value)> Width { get; }
     public ImmutableArray<(string name, double value)> Height { get; }
@@ -35,6 +36,7 @@ namespace Avalonia.Tailwind.Styles
       IEnumerable<(string name, int value, Brush brush)> brush,
       IEnumerable<(string name, double value)> fontSize,
       IEnumerable<(string name, CornerRadius cornerRadius)> cornerRadius,
+      IEnumerable<(string name, FontWeight weight)> fontWeight,
       IEnumerable<(string name, double vlaue)> spacing,
       IEnumerable<(string name, double vlaue)> width,
       IEnumerable<(string name, double vlaue)> height
@@ -45,6 +47,7 @@ namespace Avalonia.Tailwind.Styles
       this.Brush = brush.ToImmutableArray();
       this.FontSize = fontSize.ToImmutableArray();
       this.CornerRadius = cornerRadius.ToImmutableArray();
+      this.FontWeight = fontWeight.ToImmutableArray();
       this.Spacing = spacing.ToImmutableArray();
       this.Width = width.ToImmutableArray();
       this.Height = height.ToImmutableArray();

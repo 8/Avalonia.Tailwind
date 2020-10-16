@@ -15,10 +15,13 @@ namespace Avalonia.Tailwind.Controls
         .Where(t => t.IsSubclassOf(typeof(Control)))
         .Where(t => !t.IsAbstract);
 
+    public static Assembly[] GetDefaultAssemblies()
+      => new Assembly[] { typeof(Control).Assembly, Assembly.GetEntryAssembly() };
+
     public static IEnumerable<Type> GetAvaloniaControls(Assembly[] assemblies = null)
     {
       var a = (assemblies == null || assemblies.Length == 0)
-        ? new Assembly[] { typeof(Control).Assembly }
+        ? GetDefaultAssemblies()
         : assemblies;
 
       foreach (var assembly in a)

@@ -16,7 +16,8 @@ namespace Avalonia.Tailwind.Styles
         spacing: Values.Create(Scales.LargeScaleDouble),
         width: Values.Create(Scales.LargeScaleDouble),
         height: Values.Create(Scales.LargeScaleDouble),
-        cornerRadius: CornerRadiusDefinitions.CreateCornerRadiusDefinitions(Scales.SmallScaleDouble)
+        cornerRadius: CornerRadiusDefinitions.CreateCornerRadiusDefinitions(Scales.SmallScaleDouble),
+        fontWeight: FontWeightDefinitions.Create()
       );
     }
   }
