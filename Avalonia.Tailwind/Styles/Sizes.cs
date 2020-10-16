@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Styles
 {
   public static class Sizes
   {

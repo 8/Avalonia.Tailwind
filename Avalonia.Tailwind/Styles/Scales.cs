@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Linq;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Styles
 {
   public static class Scales
   {

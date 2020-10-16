@@ -36,7 +36,7 @@ namespace Avalonia.Tailwind.Test
     {
       var styleDefinitions = new DefaultStyleDefinitionProvider().Definitions;
       var types = new Type[] { type };
-      var styles = StyleUtils.CreateStyles(styleDefinitions, types, NamingStrategy.Underscore).ToArray();
+      var styles = StyleUtils.CreateStyles(styleDefinitions, types, ClassNamingStrategy.Underscore).ToArray();
 
       this.output.Dump(styles);
     }

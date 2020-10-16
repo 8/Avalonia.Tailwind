@@ -1,5 +1,4 @@
 ﻿using Avalonia.Tailwind.Colors;
-using System.Net;
 
 namespace Avalonia.Tailwind.Styles
 {

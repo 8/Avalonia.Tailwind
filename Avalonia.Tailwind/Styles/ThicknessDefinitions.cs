@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Styles
 {
   public static class ThicknessDefinitions
   {

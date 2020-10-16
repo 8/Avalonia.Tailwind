@@ -13,7 +13,7 @@ namespace Avalonia
       this TAppBuilder builder,
       IStyleDefinitions definitions = null,
       IEnumerable<Type> controlTypes = null,
-      NamingStrategy namingStrategy = NamingStrategy.Underscore)
+      ClassNamingStrategy namingStrategy = ClassNamingStrategy.Underscore)
       where TAppBuilder : AppBuilderBase<TAppBuilder>, new()
       => builder.AfterSetup(builder =>
         {

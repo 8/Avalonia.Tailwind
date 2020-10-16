@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Styles
 {
   public static class CssClassName
   {
@@ -25,14 +25,12 @@ namespace Avalonia.Tailwind
     public static string GetClassNameUnderScore(params string[] parts)
       => string.Join("_", parts.Where(p => !string.IsNullOrEmpty(p)).Select(p => p.ToLower()));
 
-    public static string GetClassName(NamingStrategy namingStrategy, params string[] parts)
+    public static string GetClassName(ClassNamingStrategy namingStrategy, params string[] parts)
       => namingStrategy switch
       {
-        NamingStrategy.CamelCase => CssClassName.GetClassNameCamelCase(parts),
-        NamingStrategy.Underscore => CssClassName.GetClassNameUnderScore(parts),
+        ClassNamingStrategy.CamelCase => CssClassName.GetClassNameCamelCase(parts),
+        ClassNamingStrategy.Underscore => CssClassName.GetClassNameUnderScore(parts),
         _ => throw new ArgumentException(nameof(namingStrategy)),
       };
-
   }
-
 }

@@ -2,7 +2,7 @@
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Avalonia.Tailwind.Test
+namespace Avalonia.Tailwind.Styles.Test
 {
   public class ScalesTest
   {

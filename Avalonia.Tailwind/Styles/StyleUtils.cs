@@ -20,7 +20,7 @@ namespace Avalonia.Tailwind
       Type controlType,
       AvaloniaProperty property,
       IStyleDefinitions definitions,
-      NamingStrategy namingStrategy
+      ClassNamingStrategy namingStrategy
       )
     {
       string getClassName(params string[] p) => CssClassName.GetClassName(namingStrategy, p);
@@ -70,7 +70,7 @@ namespace Avalonia.Tailwind
     public static IEnumerable<Style> CreateStyles(
       IStyleDefinitions definitions,
       IEnumerable<Type> controlTypes,
-      NamingStrategy namingStrategy)
+      ClassNamingStrategy namingStrategy)
     {
       //yield return CreateStyle<Border>("b2", Border.BorderThicknessProperty, new Thickness(2));
       //yield return CreateStyle<Border>("borderBlue", Border.BorderBrushProperty, new SolidColorBrush(Color.FromRgb(0x2b, 0x6c, 0xb0)));

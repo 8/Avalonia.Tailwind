@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Styles
 {
   public enum ThicknessType
   {
