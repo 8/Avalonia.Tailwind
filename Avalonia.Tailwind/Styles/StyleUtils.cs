@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Avalonia.Controls;
+using Avalonia.Layout;
 using Avalonia.Styling;
 using Avalonia.Tailwind.Controls;
 using Avalonia.Tailwind.Styles;
@@ -62,6 +64,12 @@ namespace Avalonia.Tailwind
 
         "CornerRadius" => definitions.CornerRadius.Select(d =>
           CreateStyle(controlType, property, d.cornerRadius, getClassName($"rounded", d.name))),
+
+        "HorizontalAlignment" => EnumEx.GetValues<HorizontalAlignment>().Select(alignment =>
+          CreateStyle(controlType, property, alignment, getClassName("align", "h", alignment.ToString()))),
+
+        "VerticalAlignment" => EnumEx.GetValues<VerticalAlignment>().Select(alignment =>
+          CreateStyle(controlType, property, alignment, getClassName("align", "v", alignment.ToString()))),
 
         _ => new Style[0],
       };
