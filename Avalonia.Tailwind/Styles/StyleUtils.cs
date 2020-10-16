@@ -43,7 +43,7 @@ namespace Avalonia.Tailwind
           CreateStyle(controlType, property, d.brush, getClassName("bg", d.name, $"{d.value}"))),
 
         "Foreground" => definitions.Brush.Select(d =>
-          CreateStyle(controlType, property, d.brush, getClassName($"{d.name}", $"{d.value}"))),
+          CreateStyle(controlType, property, d.brush, getClassName("text", $"{d.name}", $"{d.value}"))),
 
         "Fill" => definitions.Brush.Select(d =>
           CreateStyle(controlType, property, d.brush, getClassName(d.name, $"{d.value}"))),

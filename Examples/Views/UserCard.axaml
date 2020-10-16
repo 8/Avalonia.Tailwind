@@ -13,9 +13,9 @@
         </Border>
         <StackPanel>
           <TextBlock Classes="text_lg" Text="Erin Lindford" />
-          <TextBlock Classes="purple_500" Text="Product Engineer" />
-          <TextBlock Classes="gray_600" Text="erinlindford@example.com" />
-          <TextBlock Classes="gray_600" Text="(555) 765-4321" />
+          <TextBlock Classes="text_purple_500" Text="Product Engineer" />
+          <TextBlock Classes="text_gray_600" Text="erinlindford@example.com" />
+          <TextBlock Classes="text_gray_600" Text="(555) 765-4321" />
         </StackPanel>
       </StackPanel>
     </Border>
