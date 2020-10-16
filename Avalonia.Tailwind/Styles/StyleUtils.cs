@@ -28,7 +28,7 @@ namespace Avalonia.Tailwind
       return property.Name switch
       {
         "BorderThickness" => definitions.ThicknessSmall.Select(d =>
-          CreateStyle(controlType, property, d.thickness, getClassName("m", d.type.GetName(), d.name))),
+          CreateStyle(controlType, property, d.thickness, getClassName("border", d.type.GetName(), d.name))),
 
         "Padding" => definitions.ThicknessLarge.Select(d =>
           CreateStyle(controlType, property, d.thickness, getClassName("p", d.type.GetName(), d.name))),
