@@ -7,7 +7,7 @@
 
   <Border Classes="rounded_md bg_gray_100">
 
-    <StackPanel Classes="m_b_4">
+    <StackPanel Classes="m_b_2">
 
       <Border Classes="border_b_1 border_gray_300 p_4">
         <StackPanel>
@@ -51,7 +51,7 @@
         </Grid>
       </Border>
 
-      <Border Classes="border_b_1 border_gray_300 p_4 bg_gray_100">
+      <Border Classes="p_4 bg_gray_100">
         <Grid ColumnDefinitions="Auto, *">
           <TextBlock Grid.Column="0" Classes="w_7 text_gray_700 font_demibold text_lg" Text="Attachments" />
 
