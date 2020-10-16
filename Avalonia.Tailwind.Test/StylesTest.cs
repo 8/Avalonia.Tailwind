@@ -4,6 +4,8 @@ using Xunit.Abstractions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
+using Avalonia.Tailwind.Styles;
+using System.Linq;
 
 namespace Avalonia.Tailwind.Test
 {
@@ -34,7 +36,7 @@ namespace Avalonia.Tailwind.Test
     {
       var styleDefinitions = new DefaultStyleDefinitionProvider().Definitions;
       var types = new Type[] { type };
-      var styles = Styles.CreateStyles(styleDefinitions, types, NamingStrategy.Underscore);
+      var styles = StyleUtils.CreateStyles(styleDefinitions, types, NamingStrategy.Underscore).ToArray();
 
       this.output.Dump(styles);
     }

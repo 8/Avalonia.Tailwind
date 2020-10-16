@@ -2,7 +2,7 @@
 using Xunit.Abstractions;
 using FluentAssertions;
 
-namespace Avalonia.Tailwind.Test
+namespace Avalonia.Tailwind.Controls.Test
 {
   public class AvaloniaControlHelperTest
   {

@@ -9,7 +9,7 @@
         Classes="bg_gray_400 m_4">
   <Grid>
     <Border Classes="rounded_md bg_gray_100">
-      <StackPanel Classes="m_4 s_4"  Orientation="Horizontal">
+      <StackPanel Classes="m_4 s_4" Orientation="Horizontal">
         <Border Classes="w_6 h_6 rounded_xl bg_gray_400" >
           <Image Source="/profile.png" />
         </Border>

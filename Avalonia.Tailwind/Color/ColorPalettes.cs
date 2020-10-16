@@ -2,7 +2,7 @@
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Colors
 {
   public static class ColorPalettes
   {
@@ -40,6 +40,5 @@ namespace Avalonia.Tailwind
 
     public static readonly (string name, ImmutableArray<Color>) Pink =
       GetPalette(nameof(Pink), 0xFFF5F7, 0xFED7E2, 0xFBB6CE, 0xF687B3, 0xED64A6, 0xD53F8C, 0xB83280, 0x97266D, 0x702459);
-
   }
 }

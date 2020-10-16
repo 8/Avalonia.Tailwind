@@ -1,46 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Styling;
+using Avalonia.Tailwind.Controls;
+using Avalonia.Tailwind.Styles;
 
 namespace Avalonia.Tailwind
 {
-  public static class Styles
+  public static class StyleUtils
   {
-    public static IEnumerable<AvaloniaProperty> GetAvaloniaProperties(Type controlType)
-      => AvaloniaPropertyRegistry.Instance.GetRegistered(controlType);
-
-    public static IEnumerable<(Type controlType, AvaloniaProperty property)> GetAvaloniaControlProperties(IEnumerable<Type> controlTypes)
-      => controlTypes.SelectMany(c => GetAvaloniaProperties(c).Select(p => (c, p)));
-
     static Style CreateStyle(Type controlType, AvaloniaProperty property, object value, string name)
       => new Style
       {
         Selector = Selectors.OfType(null, controlType).Class(name),
         Setters = new List<ISetter> { new Setter(property, value) },
       };
-
-    static string GetClassNameCamelCase(params string[] parts)
-    {
-      var strBuilder = new StringBuilder();
-
-      static string Capitalize(string part)
-        => $"{char.ToUpperInvariant(part[0])}{part[1..]}";
-
-      static string Lower(string part)
-        => $"{char.ToLowerInvariant(part[0])}{part[1..]}";
-
-      for (int i = 0; i < parts.Length; i++)
-        strBuilder.Append(i == 0 ? Lower(parts[i]) : Capitalize(parts[i]));
-
-      return strBuilder.ToString();
-    }
-
-    static string GetClassNameUnderScore(params string[] parts)
-      => string.Join("_", parts.Where(p => !string.IsNullOrEmpty(p)).Select(p => p.ToLower()));
 
     static IEnumerable<Style> CreateStyles(
       Type controlType,
@@ -49,13 +23,7 @@ namespace Avalonia.Tailwind
       NamingStrategy namingStrategy
       )
     {
-      string getClassName(params string[] parts)
-        => namingStrategy switch
-        {
-          NamingStrategy.CamelCase => GetClassNameCamelCase(parts),
-          NamingStrategy.Underscore => GetClassNameUnderScore(parts),
-          _ => throw new ArgumentException(nameof(namingStrategy)),
-        };
+      string getClassName(params string[] p) => CssClassName.GetClassName(namingStrategy, p);
 
       return property.Name switch
       {
@@ -107,7 +75,7 @@ namespace Avalonia.Tailwind
       //yield return CreateStyle<Border>("b2", Border.BorderThicknessProperty, new Thickness(2));
       //yield return CreateStyle<Border>("borderBlue", Border.BorderBrushProperty, new SolidColorBrush(Color.FromRgb(0x2b, 0x6c, 0xb0)));
 
-      foreach (var controlProperty in GetAvaloniaControlProperties(controlTypes))
+      foreach (var controlProperty in AvaloniaControlHelper.GetAvaloniaControlProperties(controlTypes))
         foreach (var style in CreateStyles(controlProperty.controlType, controlProperty.property, definitions, namingStrategy))
           yield return style;
     }

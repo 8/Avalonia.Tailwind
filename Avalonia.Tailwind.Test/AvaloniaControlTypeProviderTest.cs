@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace Avalonia.Tailwind.Test
+namespace Avalonia.Tailwind.Controls.Test
 {
   public class AvaloniaControlTypeProviderTest
   {

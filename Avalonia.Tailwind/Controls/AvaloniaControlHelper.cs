@@ -5,7 +5,7 @@ using System.Reflection;
 
 using Avalonia.Controls;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Controls
 {
   public static class AvaloniaControlHelper
   {
@@ -25,6 +25,12 @@ namespace Avalonia.Tailwind
         foreach (var controlType in GetAvaloniaControls(assembly))
           yield return controlType;
     }
-  }
 
+    public static IEnumerable<AvaloniaProperty> GetAvaloniaProperties(Type controlType)
+      => AvaloniaPropertyRegistry.Instance.GetRegistered(controlType);
+
+    public static IEnumerable<(Type controlType, AvaloniaProperty property)>
+      GetAvaloniaControlProperties(IEnumerable<Type> controlTypes)
+        => controlTypes.SelectMany(c => GetAvaloniaProperties(c).Select(p => (c, p)));
+  }
 }

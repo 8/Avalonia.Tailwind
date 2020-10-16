@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Avalonia.Tailwind;
 using Avalonia.Controls;
+using Avalonia.Tailwind.Styles;
+using Avalonia.Tailwind.Controls;
 
 namespace Avalonia
 {
@@ -15,7 +17,7 @@ namespace Avalonia
       where TAppBuilder : AppBuilderBase<TAppBuilder>, new()
       => builder.AfterSetup(builder =>
         {
-          foreach (var style in Styles.CreateStyles(
+          foreach (var style in StyleUtils.CreateStyles(
             definitions ?? new DefaultStyleDefinitionProvider().Definitions,
             controlTypes ?? new AvaloniaControlTypeProvider().GetAvaloniaControls(),
             namingStrategy

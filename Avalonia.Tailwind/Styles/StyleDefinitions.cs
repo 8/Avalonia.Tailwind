@@ -4,7 +4,7 @@ using System.Collections.Immutable;
 using Avalonia;
 using Avalonia.Media;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Styles
 {
   public interface IStyleDefinitions
   {

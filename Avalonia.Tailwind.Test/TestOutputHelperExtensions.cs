@@ -2,7 +2,7 @@
 using System.Linq;
 using Xunit.Abstractions;
 
-namespace Avalonia.Tailwind.Test
+namespace Avalonia.Tailwind
 {
   public static class TestOutputHelperExtensions
   {

@@ -1,8 +1,8 @@
-﻿namespace Avalonia.Tailwind
+﻿namespace Avalonia.Tailwind.Colors
 {
-  public class DefaultColorDefinitionProvider : ColorDefinitionProvider
+  public class DefaultColorPaletteDefinitionProvider : ColorPaletteDefinitionProvider
   {
-    public DefaultColorDefinitionProvider()
+    public DefaultColorPaletteDefinitionProvider()
       :base(new []
       { 
         ColorPalettes.Gray,

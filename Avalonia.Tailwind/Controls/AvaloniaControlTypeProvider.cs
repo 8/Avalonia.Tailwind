@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Avalonia.Tailwind
+namespace Avalonia.Tailwind.Controls
 {
   public interface IAvaloniaControlTypeProvider
   {
