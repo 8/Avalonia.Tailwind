@@ -7,7 +7,7 @@ namespace Avalonia.Tailwind.Styles
 {
   public interface IStyleDefinitions
   {
-    ImmutableArray<(string name, ThicknessType type, Thickness thickness)> ThicknessSmall { get; }
+    ImmutableArray<(string name, ThicknessType type, Thickness thickness)> BorderThickness { get; }
     ImmutableArray<(string name, ThicknessType type, Thickness thickness)> ThicknessLarge { get; }
     ImmutableArray<(string name, int value, Brush brush)> Brush { get; }
     ImmutableArray<(string name, double value)> FontSize { get; }
@@ -20,7 +20,7 @@ namespace Avalonia.Tailwind.Styles
 
   public class StyleDefinitions : IStyleDefinitions
   {
-    public ImmutableArray<(string name, ThicknessType type, Thickness thickness)> ThicknessSmall { get; }
+    public ImmutableArray<(string name, ThicknessType type, Thickness thickness)> BorderThickness { get; }
     public ImmutableArray<(string name, ThicknessType type, Thickness thickness)> ThicknessLarge { get; }
     public ImmutableArray<(string name, int value, Brush brush)> Brush { get; }
     public ImmutableArray<(string name, double value)> FontSize { get; }
@@ -31,7 +31,7 @@ namespace Avalonia.Tailwind.Styles
     public ImmutableArray<(string name, double value)> Height { get; }
 
     public StyleDefinitions(
-      IEnumerable<(string name, ThicknessType type, Thickness thickness)> thicknessSmall,
+      IEnumerable<(string name, ThicknessType type, Thickness thickness)> borderThickness,
       IEnumerable<(string name, ThicknessType type, Thickness thickness)> thicknessLarge,
       IEnumerable<(string name, int value, Brush brush)> brush,
       IEnumerable<(string name, double value)> fontSize,
@@ -42,7 +42,7 @@ namespace Avalonia.Tailwind.Styles
       IEnumerable<(string name, double vlaue)> height
     )
     {
-      this.ThicknessSmall = thicknessSmall.ToImmutableArray();
+      this.BorderThickness = borderThickness.ToImmutableArray();
       this.ThicknessLarge = thicknessLarge.ToImmutableArray();
       this.Brush = brush.ToImmutableArray();
       this.FontSize = fontSize.ToImmutableArray();

@@ -7,50 +7,74 @@
 
   <Border Classes="rounded_md bg_gray_100">
 
-    <StackPanel Classes="">
+    <StackPanel Classes="m_b_4">
 
       <Border Classes="border_b_1 border_gray_300 p_4">
         <StackPanel>
-          <TextBlock Classes="text_2xl" Text="Applicant Information" />
+          <TextBlock Classes="text_2xl m_b_2" Text="Applicant Information" />
           <TextBlock Classes="text_lg text_gray_700" Text="Personal details and application." />
         </StackPanel>
       </Border>
 
       <Border Classes="p_4 bg_gray_200">
         <Grid ColumnDefinitions="Auto, *">
-          <TextBlock Grid.Column="0" Classes="w_7 m_x_4 text_gray_700 font_demibold" Text="Full name" />
+          <TextBlock Grid.Column="0" Classes="w_7 text_gray_700 font_demibold text_lg" Text="Full name" />
           <TextBlock Grid.Column="1" Classes="m_x_4 text_gray_900" Text="Margot Foster"/>
         </Grid>
       </Border>
       
       <Border Classes="p_4 bg_gray_100">
         <Grid ColumnDefinitions="Auto, *">
-          <TextBlock Grid.Column="0" Classes="w_7 m_x_4 text_gray_700 font_demibold" Text="Application for" />
+          <TextBlock Grid.Column="0" Classes="w_7 text_gray_700 font_demibold text_lg" Text="Application for" />
           <TextBlock Grid.Column="1" Classes="m_x_4 text_gray_900" Text="Backend Developer"/>
         </Grid>
       </Border>
 
       <Border Classes="p_4 bg_gray_200">
         <Grid ColumnDefinitions="Auto, *">
-          <TextBlock Grid.Column="0" Classes="w_7 m_x_4 text_gray_700 font_demibold" Text="Email address" />
+          <TextBlock Grid.Column="0" Classes="w_7 text_gray_700 font_demibold text_lg" Text="Email address" />
           <TextBlock Grid.Column="1" Classes="m_x_4 text_gray_900" Text="margotfoster@example.com"/>
         </Grid>
       </Border>
 
       <Border Classes="p_4 bg_gray_100">
         <Grid ColumnDefinitions="Auto, *">
-          <TextBlock Grid.Column="0" Classes="w_7 m_x_4 text_gray_700 font_demibold" Text="Salary expectation" />
+          <TextBlock Grid.Column="0" Classes="w_7 text_gray_700 font_demibold text_lg" Text="Salary expectation" />
           <TextBlock Grid.Column="1" Classes="m_x_4 text_gray_900" Text="$120,000"/>
         </Grid>
       </Border>
 
       <Border Classes="p_4 bg_gray_200">
         <Grid ColumnDefinitions="Auto, *">
-          <TextBlock Grid.Column="0" Classes="w_7 m_x_4 text_gray_700 font_demibold" Text="About" />
-          <TextBlock Grid.Column="1" TextWrapping="Wrap" Classes="w_8 m_x_4 text_gray_900" Text="Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu."/>
+          <TextBlock Grid.Column="0" Classes="w_7 text_gray_700 font_demibold text_lg" Text="About" />
+          <TextBlock Grid.Column="1" TextWrapping="Wrap" Classes="w_8 m_x_4 text_gray_900 align_h_left" Text="Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu."/>
         </Grid>
       </Border>
 
+      <Border Classes="border_b_1 border_gray_300 p_4 bg_gray_100">
+        <Grid ColumnDefinitions="Auto, *">
+          <TextBlock Grid.Column="0" Classes="w_7 text_gray_700 font_demibold text_lg" Text="Attachments" />
+
+          <Border Grid.Column="1" Classes="m_x_4 border_1 border_gray_300 rounded_md">
+            <StackPanel Classes="">
+              <Border Classes="p_4 border_b_1 border_gray_300">
+                <StackPanel Orientation="Horizontal" >
+                  <TextBlock Classes="align_v_center w_8 text_lg" Text="resume_back_end_developer.pdf" />
+                  <Button Classes="bg_gray_100 border_0 text_indigo_600 font_demibold text_xl align_v_center" Content="Download" />
+                </StackPanel>
+              </Border>
+
+              <Border Classes="p_4">
+                <StackPanel Orientation="Horizontal" >
+                  <TextBlock Classes="align_v_center w_8 text_lg" Text="coverletter_back_end_developer.pdf" />
+                  <Button Classes="bg_gray_100 border_0 text_indigo_600 font_demibold text_xl align_v_center" Content="Download" />
+                </StackPanel>
+              </Border>
+
+            </StackPanel>
+          </Border>
+        </Grid>
+      </Border>
     </StackPanel>
 
   </Border>

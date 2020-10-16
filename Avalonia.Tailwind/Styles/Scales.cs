@@ -6,7 +6,7 @@ namespace Avalonia.Tailwind.Styles
   public static class Scales
   {
     public static readonly int[] SmallScaleInt
-      = { 0, 2, 4, 8, 16, 32 };
+      = { 0, 1, 2, 4, 8, 16, 32 };
 
     public static readonly int[] LargeScaleInt
       = { 0, 2, 4, 8, 16, 32, 64, 128, 256, 512 };
