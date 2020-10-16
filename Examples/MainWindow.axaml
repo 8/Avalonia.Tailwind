@@ -23,7 +23,11 @@
         </Grid>
       </TabItem>
       <TabItem Header="Buttons">
-        <v:Buttons />
+        <Grid Classes="bg_gray_400" ColumnDefinitions="Auto" RowDefinitions="Auto">
+          <Border Classes="p_4 align_h_center">
+            <v:Buttons/>
+          </Border>
+        </Grid>
       </TabItem>
     </TabControl>
   </Grid>
