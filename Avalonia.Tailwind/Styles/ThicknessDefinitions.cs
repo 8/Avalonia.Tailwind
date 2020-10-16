@@ -8,16 +8,19 @@ namespace Avalonia.Tailwind.Styles
     public static ThicknessType[] GetThicknessTypes()
       => (ThicknessType[])Enum.GetValues(typeof(ThicknessType));
 
+    //const double defaultValue = default;
+    const double defaultValue = double.NaN;
+
     static Thickness GetThickness(int value, ThicknessType type)
       => type switch
       {
         ThicknessType.All => new Thickness(value),
-        ThicknessType.Left => new Thickness(value, default, default, default),
-        ThicknessType.Top => new Thickness(default, value, default, default),
-        ThicknessType.Right => new Thickness(default, default, value, default),
-        ThicknessType.Bottom => new Thickness(default, default, default, value),
-        ThicknessType.X => new Thickness(value, default),
-        ThicknessType.Y => new Thickness(default, value),
+        ThicknessType.Left => new Thickness(value, defaultValue, defaultValue, defaultValue),
+        ThicknessType.Top => new Thickness(defaultValue, value, defaultValue, defaultValue),
+        ThicknessType.Right => new Thickness(defaultValue, defaultValue, value, defaultValue),
+        ThicknessType.Bottom => new Thickness(defaultValue, defaultValue, defaultValue, value),
+        ThicknessType.X => new Thickness(value, defaultValue),
+        ThicknessType.Y => new Thickness(defaultValue, value),
         _ => throw new ArgumentException(nameof(type)),
       };
 

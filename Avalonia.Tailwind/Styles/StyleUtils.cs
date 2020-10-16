@@ -15,7 +15,7 @@ namespace Avalonia.Tailwind
       => new Style
       {
         Selector = Selectors.OfType(null, controlType).Class(name),
-        Setters = new List<ISetter> { new Setter(property, value) },
+        Setters = new List<ISetter> { new ConsolidateSetter(property, value) },
       };
 
     static IEnumerable<Style> CreateStyles(
