@@ -10,18 +10,4 @@ namespace Avalonia.Tailwind
       Create(ImmutableArray<double> values)
         => values.Select((value, i) => (name: $"{i}", value: value));
   }
-
-  //public static class Width
-  //{
-  //  public static IEnumerable<(string name, double value)>
-  //    Create(ImmutableArray<double> values)
-  //      => values.Select((value, i) => (name: $"{i}", value: value));
-  //}
-
-  //public static class Height
-  //{
-  //  public static IEnumerable<(string name, double value)>
-  //    Create(ImmutableArray<double> values)
-  //      => values.Select((value, i) => (name: $"{i}", value: value));
-  //}
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
 
 namespace Avalonia.Tailwind.Styles
@@ -33,6 +32,7 @@ namespace Avalonia.Tailwind.Styles
       "5xl",
       "6xl",
     };
+
     static string GetSizeName(int index)
       => SizeNames.Length > index ? SizeNames[index] : $"{index - 3}xl";
 

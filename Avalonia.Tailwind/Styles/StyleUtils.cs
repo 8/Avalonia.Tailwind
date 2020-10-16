@@ -72,14 +72,9 @@ namespace Avalonia.Tailwind
       IEnumerable<Type> controlTypes,
       ClassNamingStrategy namingStrategy)
     {
-      //yield return CreateStyle<Border>("b2", Border.BorderThicknessProperty, new Thickness(2));
-      //yield return CreateStyle<Border>("borderBlue", Border.BorderBrushProperty, new SolidColorBrush(Color.FromRgb(0x2b, 0x6c, 0xb0)));
-
       foreach (var controlProperty in AvaloniaControlHelper.GetAvaloniaControlProperties(controlTypes))
         foreach (var style in CreateStyles(controlProperty.controlType, controlProperty.property, definitions, namingStrategy))
           yield return style;
     }
-
   }
-
 }
