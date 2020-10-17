@@ -16,6 +16,18 @@
       </Border>
     </StackPanel>
 
+    <StackPanel Classes="m_4" Orientation="Horizontal">
+      <Border Classes="rounded_2xl bg_indigo_800">
+        <StackPanel Classes="m_x_3 m_y_3" Orientation="Horizontal">
+          <Border Classes="bg_indigo_500 rounded_2xl p_x_3 p_y_1">
+            <TextBlock Classes="text_gray_100 font_bold text_lg" Text="NEW" />
+          </Border>
+          <TextBlock Classes="text_xl m_l_3 align_v_center text_gray_100 font_demibold" Text="Get the coolest t-shirts from our brand new store" />
+          <TextBlock Classes="m_l_2 text_2xl text_gray_100 font_bold" Text=">" />
+        </StackPanel>
+      </Border>
+    </StackPanel>
+
     <StackPanel Classes="m_4">
       <Border Classes="border_l_3 border_orange_500 bg_orange_100">
         <StackPanel Classes="s_3 m_4" Orientation="Vertical">
