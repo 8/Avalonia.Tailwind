@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using Avalonia.Styling;
 using Avalonia.Tailwind.Controls;
 using Avalonia.Tailwind.Styles;
@@ -9,16 +10,16 @@ namespace Avalonia.Tailwind
 {
   public static class StyleUtils
   {
-    static Style CreateStyle(Type controlType, AvaloniaProperty property, object value, string name, string pseudo = null)
-      => new Style
+    static (Style style, int priority) CreateStyle(Type controlType, AvaloniaProperty property, object value, string name, string pseudo = null)
+      => (new Style
       {
         Selector = Selectors.Is(null, controlType).Class(name).ClassIfNotNull(pseudo),
         Setters = new List<ISetter> { new ConsolidateSetter(property, value) },
-      };
+      }, pseudo is null ? 0 : 1);
 
-    static IEnumerable<Style> CreateStyles(Type controlType, AvaloniaProperty property, object value, string name, IEnumerable<string> pseudoClasses)
+    static IEnumerable<(Style style, int priority)> CreateStyles(Type controlType, AvaloniaProperty property, object value, string name, IEnumerable<string> pseudoClasses)
     {
-      static string GetClassName(string name, string pseudo)
+      static string GetPseudoClassName(string name, string pseudo)
         => pseudo switch
         {
           string p when p.StartsWith(":") => $"{p[1..]}_{name}",
@@ -28,10 +29,10 @@ namespace Avalonia.Tailwind
 
       yield return CreateStyle(controlType, property, value, name, null);
       foreach (var pseudo in pseudoClasses)
-        yield return CreateStyle(controlType, property, value, GetClassName(name, pseudo), pseudo);
+        yield return CreateStyle(controlType, property, value, GetPseudoClassName(name, pseudo), pseudo);
     }
 
-    static IEnumerable<Style> CreateStyles(
+    static IEnumerable<(Style style, int priority)> CreateStyles(
       Type controlType,
       AvaloniaProperty property,
       IStyleDefinitions definitions,
@@ -87,11 +88,11 @@ namespace Avalonia.Tailwind
         "FontWeight" => definitions.FontWeight.Select(d =>
           CreateStyle(controlType, property, d.weight, getClassName("font", d.name))),
 
-       _ => new Style[0],
+       _ => new(Style, int)[0],
       };
     }
 
-    public static IEnumerable<Style> CreateStyles(
+    static IEnumerable<(Style style, int priority)> CreateStylesInternal(
       IStyleDefinitions definitions,
       IEnumerable<Type> controlTypes,
       ClassNamingStrategy namingStrategy)
@@ -99,6 +100,16 @@ namespace Avalonia.Tailwind
       foreach (var controlProperty in AvaloniaControlHelper.GetAvaloniaControlPropertiesFiltered(controlTypes))
         foreach (var style in CreateStyles(controlProperty.controlType, controlProperty.property, definitions, namingStrategy))
           yield return style;
+    }
+
+    public static IEnumerable<Style> CreateStyles(
+      IStyleDefinitions definitions,
+      IEnumerable<Type> controlTypes,
+      ClassNamingStrategy namingStrategy)
+    {
+      return CreateStylesInternal(definitions, controlTypes, namingStrategy)
+        .OrderBy(t => t.priority)
+        .Select(t => t.style);
     }
   }
 }
