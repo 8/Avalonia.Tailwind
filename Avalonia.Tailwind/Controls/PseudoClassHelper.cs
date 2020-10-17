@@ -15,6 +15,7 @@ namespace Avalonia.Tailwind.Controls
       {
         Type o when o == typeof(InputElement) => new[] { ":disabled", ":focus", ":focus-visible", ":pointerover" },
         Type o when o == typeof(Button) => new[] { ":pressed" },
+        Type o when o == typeof(TabItem) => new[] {":pressed", ":selected" },
         //Type o when o == typeof(ToggleButton) => new[] { ":checked", ":unchecked", ":indeterminate" },
         //Type o when o == typeof(ItemsControl) => new[] { ":empty", ":singleitem" },
         _ => new string[0],

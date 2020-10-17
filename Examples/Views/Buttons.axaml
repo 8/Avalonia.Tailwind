@@ -9,8 +9,14 @@
     <StackPanel Classes="s_4">
 
       <StackPanel Classes="s_2">
-        <TextBlock Text="Default" Classes="pointerover_text_red_700 pointerover_bg_red_200 bg_blue_200 text_blue_700"/>
         <Button Content="Default" />
+      </StackPanel>
+
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Win10" />
+        <Button Classes="text_xl bg_gray_400 border_2 p_x_4 p_y_3
+                pointerover_border_gray_500
+                pressed_bg_gray_500" Content="Rename this PC"/>
       </StackPanel>
 
       <StackPanel Classes="s_2">
@@ -25,7 +31,8 @@
       
       <StackPanel Classes="s_2">
         <TextBlock Text="Outline" />
-        <Button Classes="text_xl font_demibold border_2 text_blue_700 border_blue_700 
+        <Button Classes="text_xl font_demibold border_2
+                text_blue_700 border_blue_700 bg_gray_100
                 pointerover_text_gray_100 pointerover_bg_blue_500 pointerover_border_blue_500
                 pressed_bg_blue_600 pressed_border_blue_600"
           Content="Hover me 2"/>
@@ -34,23 +41,24 @@
       <StackPanel Classes="s_2">
         <TextBlock Text="Call to Action" />
         <Border Classes="rounded_lg">
-          <Button Classes="text_xl font_demibold bg_indigo_600 p_4 border_0 text_gray_100" Content="Get Started" />
+          <Button Classes="text_xl font_demibold bg_indigo_600 p_4 border_0 text_gray_100
+                  pointerover_bg_indigo_500
+                  pressed_bg_indigo_700" 
+                  Content="Get Started" />
         </Border>
       </StackPanel>
 
       <StackPanel Classes="s_2">
         <TextBlock Text="Secondary Action" />
-        <Button Classes="text_xl font_demibold bg_indigo_100 p_4 border_0 text_indigo_700" Content="Live Demo" />
+        <Button Classes="text_xl font_demibold bg_indigo_200 p_4 border_0 text_indigo_700
+                pointerover_bg_indigo_200
+                pressed_bg_indigo_300"
+                Content="Live Demo" />
       </StackPanel>
 
       <StackPanel Classes="s_2">
         <TextBlock Text="Free" />
         <Button Classes="text_xl text_gray_600 font_demibold bg_gray_100 border_0" Content="Cancel" />
-      </StackPanel>
-
-      <StackPanel Classes="s_2">
-        <TextBlock Text="Win10" />
-        <Button Classes="text_xl bg_gray_400 border_0 p_x_4 p_y_2" Content="Rename this PC"/>
       </StackPanel>
 
       <Border Classes="w_7 bg_blue_400 h_7 rounded_lg p_1" ClipToBounds="True" MaxWidth="400">

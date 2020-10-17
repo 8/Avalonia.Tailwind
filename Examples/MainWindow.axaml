@@ -10,17 +10,23 @@
         >
   <Grid>
     <TabControl SelectedIndex="1">
-      <TabItem Header="User Card">
+      <TabItem Header="User Card"
+               Classes="text_blue_500 text_xl pointerover_text_blue_800 selected_text_blue_800"
+               >
         <Grid Classes="bg_gray_400" ColumnDefinitions="Auto" RowDefinitions="Auto" >
           <v:UserCard />
         </Grid>
       </TabItem>
-      <TabItem Header="Info Form">
+      <TabItem Header="Info Form"
+               Classes="text_blue_500 text_xl pointerover_text_blue_800 selected_text_blue_800"
+               >
         <Grid Classes="bg_gray_400" ColumnDefinitions="Auto" RowDefinitions="Auto">
           <v:InfoForm Classes="p_4"/>
         </Grid>
       </TabItem>
-      <TabItem Header="Buttons">
+      <TabItem Header="Buttons"
+               Classes="text_blue_500 text_xl pointerover_text_blue_800 selected_text_blue_800"
+               >
         <Grid Classes="bg_gray_400" ColumnDefinitions="Auto" RowDefinitions="Auto">
           <v:Buttons Classes="p_4"/>
         </Grid>
