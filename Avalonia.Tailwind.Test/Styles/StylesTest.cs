@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Linq;
+
 using Xunit;
 using Xunit.Abstractions;
-using Avalonia;
+
 using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
 using Avalonia.Tailwind.Styles;
-using System.Linq;
+using Avalonia.Tailwind.Controls;
 
 namespace Avalonia.Tailwind.Test
 {
@@ -17,14 +19,6 @@ namespace Avalonia.Tailwind.Test
     {
       this.output = testOutputHelper;
     }
-
-    //[Fact]
-    //public void GetRegisteredProperties()
-    //{
-    //  var properties = AvaloniaPropertyRegistry.Instance.GetRegistered(typeof(Border));
-
-    //  this.output.Dump(properties);
-    //}
 
     [Theory,
       InlineData(typeof(Border)),
@@ -42,24 +36,14 @@ namespace Avalonia.Tailwind.Test
       this.output.Dump(styles);
     }
 
-    //[Fact]
-    //public void StylesTest_GetProperties()
-    //{
-    //  var fields = Styles.GetStyledPropertiesFieldInfos(typeof(Button));
-    //  foreach (var field in fields)
-    //  {
-    //    var value = field.GetValue(null);
-    //    this.output.Dump(value);
-    //  }
-    //  this.output.Dump(fields);
-    //}
+    [Fact]
+    public void StylesTest_CreateAllStyles()
+    {
+      var styleDefinitions = new DefaultStyleDefinitionProvider().Definitions;
+      var types = AvaloniaControlHelper.GetAvaloniaControls();
+      var styles = StyleUtils.CreateStyles(styleDefinitions, types, ClassNamingStrategy.Underscore).ToArray();
 
-    //[Fact]
-    //public void StylesTest_GetStyledProperties()
-    //{
-    //  var properties = Styles.GetStyledProperties(typeof(TemplatedControl));
-    //  this.output.Dump(properties);
-    //}
-
+      this.output.Dump(styles.Length);
+    }
   }
 }

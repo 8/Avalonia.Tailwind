@@ -82,7 +82,7 @@ namespace Avalonia.Tailwind
       IEnumerable<Type> controlTypes,
       ClassNamingStrategy namingStrategy)
     {
-      foreach (var controlProperty in AvaloniaControlHelper.GetAvaloniaControlProperties(controlTypes))
+      foreach (var controlProperty in AvaloniaControlHelper.GetAvaloniaControlPropertiesFiltered(controlTypes))
         foreach (var style in CreateStyles(controlProperty.controlType, controlProperty.property, definitions, namingStrategy))
           yield return style;
     }

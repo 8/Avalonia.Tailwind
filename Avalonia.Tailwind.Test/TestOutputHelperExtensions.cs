@@ -10,6 +10,7 @@ namespace Avalonia.Tailwind
       => o switch
       {
         null => "NULL",
+        string s => s,
         IEnumerable enumerable => $"[" + string.Join(", ", enumerable.Cast<object>().Select(item => Format(item))) + "]",
         var ob => ob.ToString(),
       };

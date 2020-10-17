@@ -3,6 +3,7 @@ using Xunit;
 using Xunit.Abstractions;
 using FluentAssertions;
 using Avalonia.Controls;
+using System.Linq;
 
 namespace Avalonia.Tailwind.Controls.Test
 {
@@ -40,6 +41,30 @@ namespace Avalonia.Tailwind.Controls.Test
 
       /* assert */
       types.Should().Contain(type);
+    }
+
+    [Fact]
+    public void AvaloniaControlHelperTest_GetAvaloniaControlProperties()
+    {
+      var controlProperties = AvaloniaControlHelper.GetAvaloniaControlProperties(new[] { typeof(Control) }).ToArray();
+      var buttonProperties = AvaloniaControlHelper.GetAvaloniaControlProperties(new[] { typeof(Button) }).ToArray();
+      var controlAndButtonProperties = AvaloniaControlHelper.GetAvaloniaControlProperties(new[] { typeof(Control), typeof(Button) }).ToArray();
+
+      this.output.Dump($"controlProperties.Length: { controlProperties.Length }");
+      this.output.Dump($"buttonProperties.Length: { buttonProperties.Length }");
+      this.output.Dump($"control and button Properties.Length: { controlAndButtonProperties.Length }");
+    }
+
+    [Fact]
+    public void AvaloniaControlHelperTest_GetAvaloniaControlPropertiesFiltered()
+    {
+      var controlProperties = AvaloniaControlHelper.GetAvaloniaControlPropertiesFiltered(new[] { typeof(Control) }).ToArray();
+      var buttonProperties = AvaloniaControlHelper.GetAvaloniaControlPropertiesFiltered(new[] { typeof(Button) }).ToArray();
+      var controlAndButtonProperties = AvaloniaControlHelper.GetAvaloniaControlPropertiesFiltered(new[] { typeof(Control), typeof(Button) }).ToArray();
+
+      this.output.Dump($"controlProperties.Length: { controlProperties.Length }");
+      this.output.Dump($"buttonProperties.Length: { buttonProperties.Length }");
+      this.output.Dump($"control and button Properties.Length: { controlAndButtonProperties.Length }");
     }
   }
 }
