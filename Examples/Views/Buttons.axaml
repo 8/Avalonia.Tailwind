@@ -9,15 +9,26 @@
     <StackPanel Classes="s_4">
 
       <StackPanel Classes="s_2">
-        <TextBlock Text="Default" Classes="pointerover_text_blue_700 pointerover_bg_blue_200 bg_red_200"/>
+        <TextBlock Text="Default" Classes="pointerover_text_red_700 pointerover_bg_red_200 bg_blue_200 text_blue_700"/>
         <Button Content="Default" />
       </StackPanel>
 
       <StackPanel Classes="s_2">
         <TextBlock Text="Outline" />
-        <Button Classes="text_xl font_demibold text_blue_700 border_blue_700 border_2 bg_gray_100
-                pointerover_text_red_700 pointerover_bg_red_700 pointerover_border_red_700
-                pressed_text_red_700" Content="Button" />
+        <Button Classes="text_xl font_demibold border_2
+                text_blue_700 border_blue_700 bg_gray_100
+                pointerover_text_red_700 pointerover_border_red_700
+                pressed_text_red_700"
+                Content="Hover me">
+        </Button>
+      </StackPanel>
+      
+      <StackPanel Classes="s_2">
+        <TextBlock Text="Outline" />
+        <Button Classes="text_xl font_demibold border_2 text_blue_700 border_blue_700 
+                pointerover_text_gray_100 pointerover_bg_blue_500 pointerover_border_blue_500
+                pressed_bg_blue_600 pressed_border_blue_600"
+          Content="Hover me 2"/>
       </StackPanel>
 
       <StackPanel Classes="s_2">
