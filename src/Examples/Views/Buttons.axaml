@@ -14,7 +14,7 @@
 
       <StackPanel Classes="s_2">
         <TextBlock Text="Win10" />
-        <Button Classes="text_xl bg_gray_400 border_2 p_x_4 p_y_3
+        <Button Classes="text_xl bg_gray_400 border_2 border_gray_400 p_x_4 p_y_3
                 pointerover_border_gray_500
                 pressed_bg_gray_500" Content="Rename this PC"/>
       </StackPanel>
