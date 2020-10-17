@@ -10,18 +10,6 @@ namespace Avalonia.Tailwind.Controls
 {
   public static class PseudoClassHelper
   {
-    public static
-      IDictionary<Type, ImmutableArray<string>>
-      GetPseudoClassesPerType(IEnumerable<Type> types = null)
-    {
-      types ??= AvaloniaControlHelper.GetAvaloniaControls();
-
-      return new Dictionary<Type, ImmutableArray<string>>
-      {
-        { typeof(Button), new [] { ":pressed" }.ToImmutableArray() },
-      };
-    }
-
     public static IEnumerable<string> GetPseudoClasses(Type type)
       => type switch
       {

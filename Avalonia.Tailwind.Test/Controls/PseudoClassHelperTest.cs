@@ -19,19 +19,6 @@ namespace Avalonia.Tailwind.Test.Controls
       this.output = output;
     }
 
-    [Fact]
-    public void PseudoClassHelperTest_GetPseudoClassesPertType()
-    {
-      /* arrange */
-      var types = new Type[] { };
-
-      /* act */
-      var pseudoClassesPerType = PseudoClassHelper.GetPseudoClassesPerType(types);
-
-      /* assert */
-      pseudoClassesPerType.Should().NotBeNull();
-    }
-
     [Theory,
       InlineData(typeof(Button)),
       InlineData(typeof(ToggleButton)),
