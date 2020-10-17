@@ -19,6 +19,19 @@
                 pressed_bg_gray_500" Content="Rename this PC"/>
       </StackPanel>
 
+      <!-- ClipToBounds doesn't work with CornerRadius :( -->
+      <!--<StackPanel Classes="s_2">
+        <TextBlock Text="Pill" />
+
+        <Grid >
+          <Border Classes="rounded_xl border_2 border_blue_800" ClipToBounds="True">
+            <Button Classes="text_gray_100 bg_blue_500"
+                    Content="Button"/>
+          </Border>
+          
+        </Grid>
+      </StackPanel>-->
+
       <StackPanel Classes="s_2">
         <TextBlock Text="Outline" />
         <Button Classes="text_xl font_demibold border_2
