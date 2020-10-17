@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-
+using Avalonia.Layout;
 using Avalonia.Media;
 
 namespace Avalonia.Tailwind.Styles
@@ -17,6 +17,8 @@ namespace Avalonia.Tailwind.Styles
     ImmutableArray<(string name, double value)> Spacing { get; }
     ImmutableArray<(string name, double value)> Width { get; }
     ImmutableArray<(string name, double value)> Height { get; }
+    ImmutableArray<(string name, HorizontalAlignment alignment)> HorizontalAlignment { get; }
+    ImmutableArray<(string name, VerticalAlignment alignment)> VerticalAlignment { get; }
     ImmutableDictionary<Type, ImmutableArray<string>> PseudoClasses { get; }
   }
 
@@ -31,6 +33,8 @@ namespace Avalonia.Tailwind.Styles
     public ImmutableArray<(string name, double value)> Spacing { get; }
     public ImmutableArray<(string name, double value)> Width { get; }
     public ImmutableArray<(string name, double value)> Height { get; }
+    public ImmutableArray<(string name, HorizontalAlignment alignment)> HorizontalAlignment { get; }
+    public ImmutableArray<(string name, VerticalAlignment alignment)> VerticalAlignment { get; }
     public ImmutableDictionary<Type, ImmutableArray<string>> PseudoClasses { get; }
 
     public StyleDefinitions(
@@ -43,6 +47,8 @@ namespace Avalonia.Tailwind.Styles
       IEnumerable<(string name, double vlaue)> spacing,
       IEnumerable<(string name, double vlaue)> width,
       IEnumerable<(string name, double vlaue)> height,
+      IEnumerable<(string name, HorizontalAlignment alignment)> horizontalAlignment,
+      IEnumerable<(string name, VerticalAlignment alignment)> verticalAlignment,
       IDictionary<Type, ImmutableArray<string>> pseudoClasses
     )
     {
@@ -55,6 +61,8 @@ namespace Avalonia.Tailwind.Styles
       this.Spacing = spacing.ToImmutableArray();
       this.Width = width.ToImmutableArray();
       this.Height = height.ToImmutableArray();
+      this.HorizontalAlignment = horizontalAlignment.ToImmutableArray();
+      this.VerticalAlignment = verticalAlignment.ToImmutableArray();
       this.PseudoClasses = pseudoClasses.ToImmutableDictionary();
     }
   }

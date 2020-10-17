@@ -64,11 +64,11 @@ namespace Avalonia.Tailwind
         "CornerRadius" => definitions.CornerRadius.Select(d =>
           CreateStyle(controlType, property, d.cornerRadius, getClassName($"rounded", d.name))),
 
-        "HorizontalAlignment" => EnumEx.GetValues<HorizontalAlignment>().Select(alignment =>
-          CreateStyle(controlType, property, alignment, getClassName("align", "h", alignment.ToString()))),
+        "HorizontalAlignment" => definitions.HorizontalAlignment.Select(d =>
+          CreateStyle(controlType, property, d.alignment, getClassName("align", "h", d.name))),
 
-        "VerticalAlignment" => EnumEx.GetValues<VerticalAlignment>().Select(alignment =>
-          CreateStyle(controlType, property, alignment, getClassName("align", "v", alignment.ToString()))),
+        "VerticalAlignment" => definitions.VerticalAlignment.Select(d =>
+          CreateStyle(controlType, property, d.alignment, getClassName("align", "v", d.name))),
 
         "FontWeight" => definitions.FontWeight.Select(d =>
           CreateStyle(controlType, property, d.weight, getClassName("font", d.name))),

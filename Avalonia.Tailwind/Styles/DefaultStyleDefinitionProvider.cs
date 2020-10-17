@@ -1,5 +1,7 @@
-﻿using Avalonia.Tailwind.Colors;
+﻿using Avalonia.Layout;
+using Avalonia.Tailwind.Colors;
 using Avalonia.Tailwind.Controls;
+using System.Linq;
 
 namespace Avalonia.Tailwind.Styles
 {
@@ -19,6 +21,8 @@ namespace Avalonia.Tailwind.Styles
         height: Values.Create(Scales.LargeScaleDouble),
         cornerRadius: CornerRadiusDefinitions.CreateCornerRadiusDefinitions(Scales.SmallScaleDouble),
         fontWeight: FontWeightDefinitions.Create(),
+        horizontalAlignment: EnumEx.GetValues<HorizontalAlignment>().Select(alignment => (name: alignment.ToString(), alignment)),
+        verticalAlignment: EnumEx.GetValues<VerticalAlignment>().Select(alignment => (name: alignment.ToString(), alignment)),
         pseudoClasses: PseudoClassHelper.GetPseudoClassesPerType()
       );
     }
