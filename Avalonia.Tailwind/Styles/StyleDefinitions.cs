@@ -19,7 +19,7 @@ namespace Avalonia.Tailwind.Styles
     ImmutableArray<(string name, double value)> Height { get; }
     ImmutableArray<(string name, HorizontalAlignment alignment)> HorizontalAlignment { get; }
     ImmutableArray<(string name, VerticalAlignment alignment)> VerticalAlignment { get; }
-    ImmutableDictionary<Type, ImmutableArray<string>> PseudoClasses { get; }
+    ImmutableArray<string> PseudoClasses { get; }
   }
 
   public class StyleDefinitions : IStyleDefinitions
@@ -35,7 +35,7 @@ namespace Avalonia.Tailwind.Styles
     public ImmutableArray<(string name, double value)> Height { get; }
     public ImmutableArray<(string name, HorizontalAlignment alignment)> HorizontalAlignment { get; }
     public ImmutableArray<(string name, VerticalAlignment alignment)> VerticalAlignment { get; }
-    public ImmutableDictionary<Type, ImmutableArray<string>> PseudoClasses { get; }
+    public ImmutableArray<string> PseudoClasses { get; }
 
     public StyleDefinitions(
       IEnumerable<(string name, ThicknessType type, Thickness thickness)> borderThickness,
@@ -49,7 +49,7 @@ namespace Avalonia.Tailwind.Styles
       IEnumerable<(string name, double vlaue)> height,
       IEnumerable<(string name, HorizontalAlignment alignment)> horizontalAlignment,
       IEnumerable<(string name, VerticalAlignment alignment)> verticalAlignment,
-      IDictionary<Type, ImmutableArray<string>> pseudoClasses
+      IEnumerable<string> pseudoClasses
     )
     {
       this.BorderThickness = borderThickness.ToImmutableArray();
@@ -63,7 +63,7 @@ namespace Avalonia.Tailwind.Styles
       this.Height = height.ToImmutableArray();
       this.HorizontalAlignment = horizontalAlignment.ToImmutableArray();
       this.VerticalAlignment = verticalAlignment.ToImmutableArray();
-      this.PseudoClasses = pseudoClasses.ToImmutableDictionary();
+      this.PseudoClasses = pseudoClasses.ToImmutableArray();
     }
   }
 }

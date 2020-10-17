@@ -9,13 +9,15 @@
     <StackPanel Classes="s_4">
 
       <StackPanel Classes="s_2">
-        <TextBlock Text="Default" />
+        <TextBlock Text="Default" Classes="pointerover_text_blue_700 pointerover_bg_blue_200 bg_red_200"/>
         <Button Content="Default" />
       </StackPanel>
 
       <StackPanel Classes="s_2">
         <TextBlock Text="Outline" />
-        <Button Classes="text_xl font_demibold text_blue_700 border_blue_700 border_2 bg_gray_100" Content="Button" />
+        <Button Classes="text_xl font_demibold text_blue_700 border_blue_700 border_2 bg_gray_100
+                pointerover_text_red_700 pointerover_bg_red_700 pointerover_border_red_700
+                pressed_text_red_700" Content="Button" />
       </StackPanel>
 
       <StackPanel Classes="s_2">

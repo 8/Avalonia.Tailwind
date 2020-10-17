@@ -1,7 +1,12 @@
-﻿using Avalonia.Controls;
-using System.Reflection;
+﻿using System;
 using Xunit;
 using Xunit.Abstractions;
+using FluentAssertions;
+
+using Avalonia.Controls;
+using Avalonia.Tailwind.Controls;
+using Avalonia.Controls.Primitives;
+using Avalonia.Input;
 
 namespace Avalonia.Tailwind.Test.Controls
 {
@@ -15,15 +20,40 @@ namespace Avalonia.Tailwind.Test.Controls
     }
 
     [Fact]
-    public void PseudoClassHelperTest_Ctor()
+    public void PseudoClassHelperTest_GetPseudoClassesPertType()
     {
-      var type = typeof(Button);
+      /* arrange */
+      var types = new Type[] { };
 
-      var attributes = type.GetCustomAttributes();
+      /* act */
+      var pseudoClassesPerType = PseudoClassHelper.GetPseudoClassesPerType(types);
 
-      foreach (var att in attributes)
-        this.output.Dump(att);
+      /* assert */
+      pseudoClassesPerType.Should().NotBeNull();
+    }
 
+    [Theory,
+      InlineData(typeof(Button)),
+      InlineData(typeof(ToggleButton)),
+      InlineData(typeof(InputElement)),
+      InlineData(typeof(ItemsControl)),
+    ]
+    public void PseudoClassHelperTest_GetPseudoClasses(Type t)
+    {
+      /* act */
+      var pseudoClasses = PseudoClassHelper.GetPseudoClasses(t);
+
+      /* assert */
+      pseudoClasses.Should().NotBeNull();
+      this.output.Dump(pseudoClasses);
+    }
+
+    [Fact]
+    public void PseudoClassHelperTest_GetPseudoClassesRecursive()
+    {
+      var pseudoClasses = PseudoClassHelper.GetPseudoClassesRecursive(typeof(Button));
+
+      this.output.Dump(pseudoClasses);
     }
   }
 }

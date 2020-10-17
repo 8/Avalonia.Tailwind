@@ -8,6 +8,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
 using Avalonia.Tailwind.Styles;
 using Avalonia.Tailwind.Controls;
+using Avalonia.Styling;
 
 namespace Avalonia.Tailwind.Test
 {
@@ -26,6 +27,7 @@ namespace Avalonia.Tailwind.Test
       InlineData(typeof(Rectangle)),
       InlineData(typeof(TextBlock)),
       InlineData(typeof(UserControl)),
+      InlineData(typeof(Button)),
     ]
     public void StylesTest_CreateStyles(Type type)
     {
@@ -33,7 +35,9 @@ namespace Avalonia.Tailwind.Test
       var types = new Type[] { type };
       var styles = StyleUtils.CreateStyles(styleDefinitions, types, ClassNamingStrategy.Underscore).ToArray();
 
-      this.output.Dump(styles);
+      //this.output.Dump(styles);
+      foreach (var style in styles)
+        this.output.Dump(style);
     }
 
     [Fact]
@@ -43,7 +47,20 @@ namespace Avalonia.Tailwind.Test
       var types = AvaloniaControlHelper.GetAvaloniaControls();
       var styles = StyleUtils.CreateStyles(styleDefinitions, types, ClassNamingStrategy.Underscore).ToArray();
 
-      this.output.Dump(styles.Length);
+      this.output.Dump($"Number of Styles: {styles.Length}");
     }
+
+    [Fact]
+    public void StylesTest_Ctor()
+    {
+      //  var style = new Style(x => x.Class("large"));
+      //  style.Setters.Add(new Setter(Border.CornerRadiusProperty, 4));
+
+      //new Style(x => x.Class("large"));
+      //new Style(x => x.Class(":focus"));
+      //new Style(x => x.OfType<Button>().Class("large"));
+      //new Style(x => x.OfType<Button>().Class("large").Class(":focus"));
+    }
+
   }
 }

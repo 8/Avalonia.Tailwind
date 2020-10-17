@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Avalonia.Layout;
 using Avalonia.Styling;
 using Avalonia.Tailwind.Controls;
 using Avalonia.Tailwind.Styles;
@@ -16,6 +15,21 @@ namespace Avalonia.Tailwind
         Selector = Selectors.Is(null, controlType).Class(name).ClassIfNotNull(pseudo),
         Setters = new List<ISetter> { new ConsolidateSetter(property, value) },
       };
+
+    static IEnumerable<Style> CreateStyles(Type controlType, AvaloniaProperty property, object value, string name, IEnumerable<string> pseudoClasses)
+    {
+      static string GetClassName(string name, string pseudo)
+        => pseudo switch
+        {
+          string p when p.StartsWith(":") => $"{p[1..]}_{name}",
+          string p => $"{p}_{name}",
+          _ => name,
+        };
+
+      yield return CreateStyle(controlType, property, value, name, null);
+      foreach (var pseudo in pseudoClasses)
+        yield return CreateStyle(controlType, property, value, GetClassName(name, pseudo), pseudo);
+    }
 
     static IEnumerable<Style> CreateStyles(
       Type controlType,
@@ -37,14 +51,14 @@ namespace Avalonia.Tailwind
         "Margin" => definitions.ThicknessLarge.Select(d =>
           CreateStyle(controlType, property, d.thickness, getClassName("m", d.type.GetName(), d.name))),
 
-        "BorderBrush" => definitions.Brush.Select(d =>
-          CreateStyle(controlType, property, d.brush, getClassName("border", d.name, $"{d.value}"))),
+        "BorderBrush" => definitions.Brush.SelectMany(d =>
+          CreateStyles(controlType, property, d.brush, getClassName("border", d.name, $"{d.value}"), definitions.PseudoClasses)),
 
-        "Background" => definitions.Brush.Select(d =>
-          CreateStyle(controlType, property, d.brush, getClassName("bg", d.name, $"{d.value}"))),
+        "Background" => definitions.Brush.SelectMany(d =>
+          CreateStyles(controlType, property, d.brush, getClassName("bg", d.name, $"{d.value}"), definitions.PseudoClasses)),
 
-        "Foreground" => definitions.Brush.Select(d =>
-          CreateStyle(controlType, property, d.brush, getClassName("text", $"{d.name}", $"{d.value}"))),
+        "Foreground" => definitions.Brush.SelectMany(d =>
+          CreateStyles(controlType, property, d.brush, getClassName("text", $"{d.name}", $"{d.value}"), definitions.PseudoClasses)),
 
         "Fill" => definitions.Brush.Select(d =>
           CreateStyle(controlType, property, d.brush, getClassName(d.name, $"{d.value}"))),

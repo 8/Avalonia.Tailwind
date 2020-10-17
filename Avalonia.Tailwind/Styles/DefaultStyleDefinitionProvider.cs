@@ -23,7 +23,7 @@ namespace Avalonia.Tailwind.Styles
         fontWeight: FontWeightDefinitions.Create(),
         horizontalAlignment: EnumEx.GetValues<HorizontalAlignment>().Select(alignment => (name: alignment.ToString(), alignment)),
         verticalAlignment: EnumEx.GetValues<VerticalAlignment>().Select(alignment => (name: alignment.ToString(), alignment)),
-        pseudoClasses: PseudoClassHelper.GetPseudoClassesPerType()
+        pseudoClasses: PseudoClassHelper.GetAllPseudoClasses()
       );
     }
   }
