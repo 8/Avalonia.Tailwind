@@ -43,7 +43,7 @@
             <TextBlock Classes="text_gray_100 m_x_4 m_y_3 text_xl font_bold" Text="Danger" />
           </Border>
           <Border Classes="rounded_b_md bg_red_100 border_1 border_red_400">
-            <TextBlock Classes="m_3 text_red_700 " Text="Something not ideal might be happening." />
+            <TextBlock Classes="m_4 text_red_700 text_lg" Text="Something not ideal might be happening." />
           </Border>
         </StackPanel>
     </StackPanel>
