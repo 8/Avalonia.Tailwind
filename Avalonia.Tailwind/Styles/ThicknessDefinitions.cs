@@ -8,7 +8,6 @@ namespace Avalonia.Tailwind.Styles
     public static ThicknessType[] GetThicknessTypes()
       => (ThicknessType[])Enum.GetValues(typeof(ThicknessType));
 
-    //const double defaultValue = default;
     const double defaultValue = double.NaN;
 
     static Thickness GetThickness(int value, ThicknessType type)

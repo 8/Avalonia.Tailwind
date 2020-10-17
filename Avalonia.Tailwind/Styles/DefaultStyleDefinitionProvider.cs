@@ -19,7 +19,7 @@ namespace Avalonia.Tailwind.Styles
         spacing: Values.Create(Scales.LargeScaleDouble),
         width: Values.Create(Scales.LargeScaleDouble),
         height: Values.Create(Scales.LargeScaleDouble),
-        cornerRadius: CornerRadiusDefinitions.CreateCornerRadiusDefinitions(Scales.SmallScaleDouble),
+        cornerRadius: CornerRadiusDefinitions.CreateCornerRadiusDefinitions(Scales.SmallScaleDouble, CornerRadiusDefinitions.GetCornerRadiusTypes()),
         fontWeight: FontWeightDefinitions.Create(),
         horizontalAlignment: EnumEx.GetValues<HorizontalAlignment>().Select(alignment => (name: alignment.ToString(), alignment)),
         verticalAlignment: EnumEx.GetValues<VerticalAlignment>().Select(alignment => (name: alignment.ToString(), alignment)),

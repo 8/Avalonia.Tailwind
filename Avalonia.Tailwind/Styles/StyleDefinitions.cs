@@ -12,7 +12,7 @@ namespace Avalonia.Tailwind.Styles
     ImmutableArray<(string name, ThicknessType type, Thickness thickness)> ThicknessLarge { get; }
     ImmutableArray<(string name, int value, Brush brush)> Brush { get; }
     ImmutableArray<(string name, double value)> FontSize { get; }
-    ImmutableArray<(string name, CornerRadius cornerRadius)> CornerRadius { get; }
+    ImmutableArray<(string name, CornerRadiusType type, CornerRadius cornerRadius)> CornerRadius { get; }
     ImmutableArray<(string name, FontWeight weight)> FontWeight { get; }
     ImmutableArray<(string name, double value)> Spacing { get; }
     ImmutableArray<(string name, double value)> Width { get; }
@@ -28,7 +28,7 @@ namespace Avalonia.Tailwind.Styles
     public ImmutableArray<(string name, ThicknessType type, Thickness thickness)> ThicknessLarge { get; }
     public ImmutableArray<(string name, int value, Brush brush)> Brush { get; }
     public ImmutableArray<(string name, double value)> FontSize { get; }
-    public ImmutableArray<(string name, CornerRadius cornerRadius)> CornerRadius { get; }
+    public ImmutableArray<(string name, CornerRadiusType type, CornerRadius cornerRadius)> CornerRadius { get; }
     public ImmutableArray<(string name, FontWeight weight)> FontWeight { get; }
     public ImmutableArray<(string name, double value)> Spacing { get; }
     public ImmutableArray<(string name, double value)> Width { get; }
@@ -42,7 +42,7 @@ namespace Avalonia.Tailwind.Styles
       IEnumerable<(string name, ThicknessType type, Thickness thickness)> thicknessLarge,
       IEnumerable<(string name, int value, Brush brush)> brush,
       IEnumerable<(string name, double value)> fontSize,
-      IEnumerable<(string name, CornerRadius cornerRadius)> cornerRadius,
+      IEnumerable<(string name, CornerRadiusType type, CornerRadius cornerRadius)> cornerRadius,
       IEnumerable<(string name, FontWeight weight)> fontWeight,
       IEnumerable<(string name, double vlaue)> spacing,
       IEnumerable<(string name, double vlaue)> width,

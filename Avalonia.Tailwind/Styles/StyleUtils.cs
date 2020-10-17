@@ -77,7 +77,7 @@ namespace Avalonia.Tailwind
           CreateStyle(controlType, property, d.value, getClassName($"h", d.name))),
 
         "CornerRadius" => definitions.CornerRadius.Select(d =>
-          CreateStyle(controlType, property, d.cornerRadius, getClassName($"rounded", d.name))),
+          CreateStyle(controlType, property, d.cornerRadius, getClassName($"rounded", d.type.GetName(), d.name))),
 
         "HorizontalAlignment" => definitions.HorizontalAlignment.Select(d =>
           CreateStyle(controlType, property, d.alignment, getClassName("align", "h", d.name))),
